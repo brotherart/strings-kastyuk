@@ -48,5 +48,4 @@ public class Address {
 	public void setFlatNumber(int flatNumber) {
 		this.flatNumber = flatNumber;
 	}
-	
 }

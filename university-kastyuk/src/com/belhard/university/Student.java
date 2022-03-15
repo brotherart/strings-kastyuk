@@ -1,32 +1,27 @@
 package com.belhard.university;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Student {
 
-	private static long counter = 1;
+	private static long counter;
 	private long id;
 	
 	private String firstName;
 	private String lastName;
 	private Address address;
-	
-	private Date dateOfBirth;
+
+	private LocalDate dateOfBirth;
 	
 	private int yearsOfStudy;
 	
 	private boolean isBudget;
 	
 	
-	public Student (String firstName, String lastName) {
-		id = counter++;
+	public Student(String firstName, String lastName, Address address, LocalDate dateOfBirth, int yearsOfStudy, boolean isBudget) {
+		id = ++counter;
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
-	
-	public Student(String firstName, String lastName, Address address, Date dateOfBirth, int yearsOfStudy, boolean isBudget) {
-		this(firstName, lastName);
-		
 		this.address = address;
 		this.dateOfBirth = dateOfBirth;
 		this.yearsOfStudy = yearsOfStudy;
@@ -62,10 +57,10 @@ public class Student {
 		this.address = address;
 	}
 	
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	
@@ -82,5 +77,9 @@ public class Student {
 	public void setIsBudget(boolean isBudget) {
 		this.isBudget = isBudget;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
 }

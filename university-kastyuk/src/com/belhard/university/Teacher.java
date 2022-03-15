@@ -1,10 +1,10 @@
 package com.belhard.university;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Teacher {
 
-	private static long counter = 1;
+	private static long counter;
 	private long id;
 	
 	private String firstName;
@@ -12,16 +12,21 @@ public class Teacher {
 	private String subject;
 	private Address address;
 	
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	private int yearsOfExperience;
 
 	private double salary;
 	
-	public Teacher (String firstName, String lastName) {
-		id = counter++;
+	public Teacher (String firstName, String lastName,  String subject, Address address, LocalDate dateOfBirth, int yearsOfExperience, double salary) {
+		id = ++counter;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.subject = subject;
+		this.address = address;
+		this.dateOfBirth = dateOfBirth;
+		this.yearsOfExperience = yearsOfExperience;
+		this.salary = salary;
 	}
 	
 	public long getId() {
@@ -59,10 +64,10 @@ public class Teacher {
 		this.subject = subject;
 	}
 	
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	
@@ -78,5 +83,10 @@ public class Teacher {
 	}
 	public void setSalary(double salary) {
 		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 }
