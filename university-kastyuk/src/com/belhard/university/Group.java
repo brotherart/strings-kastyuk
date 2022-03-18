@@ -79,4 +79,11 @@ public class Group {
 		return list;
 	}
 	
+//-----------------------------------------------------------------------------
+	
+	public class Departmen {
+		
+		//Person teacher11 = new Person ("afaf", "aafaf");
+		
+	}
 }
