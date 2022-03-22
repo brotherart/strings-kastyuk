@@ -57,9 +57,7 @@ public class Person {
 		
 		
 		
-		public EmployeePerson(String firstName, String lastName, Address address, LocalDate dateOfBirth, int yearsOfWork, int workHoursOfWeek, int numberOfVacationDays, double salary) {
-			super(firstName, lastName, address, dateOfBirth);
-			
+		public EmployeePerson(int yearsOfWork, int workHoursOfWeek, int numberOfVacationDays, double salary) {
 			this.yearsOfWork = yearsOfWork;
 			this.workHoursOfWeek = workHoursOfWeek;
 			this.numberOfVacationDays = numberOfVacationDays;
@@ -104,6 +102,7 @@ public class Person {
 
 		public TeacherPerson(int yearsOfWork, int workHoursOfWeek, int numberOfVacationDays, double salary, String areaOfEducation, String academicDegree) {
 			super(yearsOfWork, workHoursOfWeek, numberOfVacationDays, salary);
+			
 			this.areaOfEducation = areaOfEducation;
 			this.academicDegree = academicDegree;
 		}
